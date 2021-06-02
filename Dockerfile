@@ -6,6 +6,8 @@ ADD --chown=zookeeper:zookeeper --chmod=774 docker-entrypoint.sh /docker-entrypo
 
 USER zookeeper:zookeeper
 
+ENV ZOO_STANDALONE_ENABLED=false
+
 ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
 CMD [ "zkServer.sh", "start-foreground" ]
