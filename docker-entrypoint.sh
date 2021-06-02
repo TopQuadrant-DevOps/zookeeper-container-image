@@ -55,4 +55,7 @@ if [[ ! -f "$ZOO_DATA_DIR/myid" ]]; then
     echo "${ZOO_MY_ID:-1}" > "$ZOO_DATA_DIR/myid"
 fi
 
+# Show the config for debug purposes
+cat $ZOO_CONF_DIR/zoo.cfg
+
 exec "$@"
