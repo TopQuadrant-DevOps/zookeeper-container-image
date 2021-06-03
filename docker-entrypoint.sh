@@ -32,6 +32,8 @@ if [[ ! -f "$ZOO_CONF_DIR/zoo.cfg" ]]; then
                 ZOO_SERVERS="${ZOO_SERVERS}server.$counter=$server:2888:3888;2181 "
                 ((counter++))
             done
+            ZOO_SERVERS="${ZOO_SERVERS}server.$counter=localhost:2888:3888;2181 "
+            ZOO_MY_ID=$counter
         else
             ZOO_SERVERS="server.1=localhost:2888:3888;2181"
         fi
